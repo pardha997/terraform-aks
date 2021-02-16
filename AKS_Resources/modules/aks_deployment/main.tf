@@ -16,8 +16,8 @@ resource "kubernetes_deployment" "deploy" {
   metadata {
     name = var.deployment_name
     labels = {
-       environment: var.environment
-       app: var.app_name_dep      
+       environment = var.environment
+       app = var.app_name_dep      
     }
   }
 
@@ -26,16 +26,16 @@ resource "kubernetes_deployment" "deploy" {
 
     selector {
       match_labels = {
-         environment: var.environment
-         app: var.app_name_dep 
+         environment = var.environment
+         app = var.app_name_dep 
       }
     }
 
     template {
       metadata {
         labels = {
-          environment: var.environment
-          app: var.app_name_dep 
+          environment = var.environment
+          app = var.app_name_dep 
         }
       }
 
