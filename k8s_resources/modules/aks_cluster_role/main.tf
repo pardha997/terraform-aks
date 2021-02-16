@@ -8,12 +8,12 @@ terraform {
 }
 
 provider "kubernetes" {
-  features{}
+  config_path = "~/.kube/config" 
 }
 
-resource "kubernetes_cluster_role" "example" {
+resource "kubernetes_cluster_role" "cluster_role" {
   metadata {
-    name = "terraform-example"
+    name = var.cluster_role_name
   }
 
   rule {
