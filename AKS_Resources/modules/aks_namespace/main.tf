@@ -17,8 +17,8 @@ resource "kubernetes_namespace" "ns" {
     annotations = {}
 
     labels = {
-       environment: var.environment
-       app: var.appname
+       environment = var.environment
+       app = var.appname
     }
 
     name = var.ns_name
